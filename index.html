@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Online Ticket :: DIU_Transport_System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style/online-ticket.css" />
+
+
+</head>
+
+<bod>
+
+
+
+    <div id="booking" class="boksection">
+        <div class="boksection-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1>DIU Online Bus Ticket Booking</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+                                Perspiciatis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form">
+                            <form>
+                                <div class="bokform-group">
+                                    <span class="bokform-label"> From</span>
+                                    <select class="form-control" required>
+                                    <option value="">Select Route</option>
+                                    <option value="">DIU</option>
+                                    <option value="">City Campus Route</option>
+                                    <option value="">Mirpur Route</option>
+                                    <option value="">Uttara Route</option>
+                                    <option value="">Tongi College Gate Route</option>
+                                    <option value="">Others Route</option>
+                                </select>
+                                    <span class="bokselect-arrow"></span>
+                                </div>
+                                <div class="bokform-group">
+                                    <span class="bokform-label">To</span>
+                                    <select class="form-control" required>
+                                    <option value="">Select Route</option>
+                                    <option value="">DIU</option>
+                                    <option value="">City Campus Route</option>
+                                    <option value="">Mirpur Route</option>
+                                    <option value="">Uttara Route</option>
+                                    <option value="">Tongi College Gate Route</option>
+                                    <option value="">Others Route</option>
+                                </select>
+                                    <span class="bokselect-arrow"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="bokform-group">
+                                            <span class="bokform-label">Date</span>
+                                            <input class="form-control" id="minmaxdate" min="2020-11-21" max="2020-11-30" style="width: 160px;" type="date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="bokbtn">Check availability </button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var now = new Date();
+        var xday = now.getDate();
+        var xmonth = now.getMonth() + 1;
+        var xyear = now.getFullYear();
+        var x = xyear + "-" + xmonth + "-" + xday;
+        if (xmonth == 12) {
+            var xmaxday = 1;
+            var xyear = xyear + 1;
+            var y = xyear + "-" + xmaxday + "-" + xday;
+        } else {
+            var xmaxday = xmonth + 1;
+            var y = xyear + "-" + xmaxday + "-" + xday;
+
+        }
+        document.querySelector("#minmaxdate").setAttribute("min", x);
+        document.querySelector("#minmaxdate").setAttribute("max", y);
+    </script>
+
+</bod>
+
+</html>
